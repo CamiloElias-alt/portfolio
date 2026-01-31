@@ -6,7 +6,9 @@ import Highlights from './components/Highlights/Highlights.jsx';
 import Contact from './components/Contact/Contact.jsx';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    return (typeof window !== 'undefined' && localStorage.getItem('theme')) || 'dark';
+  });
   const [currentSection, setCurrentSection] = useState('inicio');
 
   useEffect(() => {
@@ -24,7 +26,11 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    setTheme((prev) => {
+      const next = prev === 'dark' ? 'light' : 'dark';
+      if (typeof window !== 'undefined') localStorage.setItem('theme', next);
+      return next;
+    });
   };
 
   useEffect(() => {
@@ -62,6 +68,7 @@ function App() {
       />
       <main>
         <Hero />
+        <hr className="section-separator" />
         <section id="sobre-mi" className="about">
           <div className="about-inner">
             <p className="section-kicker">Sobre mí</p>
@@ -73,7 +80,9 @@ function App() {
             </p>
           </div>
         </section>
+        <hr className="section-separator" />
         <Highlights />
+        <hr className="section-separator" />
         <Contact />
       </main>
       <footer className="footer-basic">
