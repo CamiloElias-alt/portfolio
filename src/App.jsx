@@ -74,9 +74,12 @@ function App() {
             <p className="section-kicker">Sobre mí</p>
             <h2>Quién soy y cómo trabajo</h2>
             <p className="section-subtitle">
-              Soy Camilo, desarrollador frontend enfocado en construir interfaces claras y
-              fluidas. Me gusta trabajar de forma iterativa: entender bien el problema,
-              diseñar una solución simple y mejorarla poco a poco con feedback real.
+              Soy Camilo, desarrollador frontend apasionado por
+               construir experiencias digitales que realmente
+               funcionan. Mi proceso es simple pero efectivo: 
+               entiendo tu necesidad, creo una solución clara y
+                la voy puliendo hasta que sea exactamente 
+                lo que necesitas.
             </p>
           </div>
         </section>
