@@ -6,6 +6,7 @@ function Navbar({ currentSection, onNavigate, theme, onToggleTheme }) {
     { id: "inicio", label: "Inicio" },
     { id: "sobre-mi", label: "Sobre mí" },
     { id: "destacados", label: "Destacados" },
+    { id: "proyectos", label: "Proyectos" },
     { id: "contacto", label: "Contacto" },
   ];
 

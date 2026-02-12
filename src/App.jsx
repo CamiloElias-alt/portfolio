@@ -3,7 +3,9 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Highlights from './components/Highlights/Highlights.jsx';
+import Projects from './components/Projects/Projects.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import StarsBackground from './components/StarsBackground/StarsBackground.jsx';
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -34,7 +36,7 @@ function App() {
   };
 
   useEffect(() => {
-    const sectionIds = ['inicio', 'sobre-mi', 'destacados', 'contacto'];
+    const sectionIds = ['inicio', 'sobre-mi', 'destacados', 'proyectos', 'contacto'];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -60,6 +62,7 @@ function App() {
 
   return (
     <div className="app">
+      <StarsBackground />
       <Navbar
         currentSection={currentSection}
         onNavigate={handleNavigate}
@@ -74,17 +77,16 @@ function App() {
             <p className="section-kicker">Sobre mí</p>
             <h2>Quién soy y cómo trabajo</h2>
             <p className="section-subtitle">
-              Soy Camilo, desarrollador frontend apasionado por
-               construir experiencias digitales que realmente
-               funcionan. Mi proceso es simple pero efectivo: 
-               entiendo tu necesidad, creo una solución clara y
-                la voy puliendo hasta que sea exactamente 
-                lo que necesitas.
+              Soy Camilo, desarrollador frontend apasionado por construir experiencias digitales que
+              realmente funcionan. Mi proceso es simple pero efectivo: entiendo tu necesidad, creo
+              una solución clara y la voy puliendo hasta que sea exactamente lo que necesitas.
             </p>
           </div>
         </section>
         <hr className="section-separator" />
         <Highlights />
+        <hr className="section-separator" />
+        <Projects />
         <hr className="section-separator" />
         <Contact />
       </main>

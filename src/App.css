@@ -16,6 +16,8 @@
   --input-bg-focus: rgba(15, 23, 42, 0.9);
   --input-border: rgba(148, 163, 184, 0.6);
   --accent-soft-faded: rgba(56, 189, 248, 0.4);
+  /* Estrellas: color claro en modo oscuro */
+  --stars-color: rgba(226, 232, 240, 0.9);
 }
 
 :root[data-theme="light"] {
@@ -36,6 +38,8 @@
   --input-bg-focus: #ffffff;
   --input-border: rgba(148, 163, 184, 0.7);
   --accent-soft-faded: rgba(14, 165, 233, 0.4);
+  /* Estrellas: azul cielo en modo claro */
+  --stars-color: rgba(56, 189, 248, 0.9);
 }
 
 body {
@@ -52,7 +56,9 @@ body {
 }
 
 .app {
+  position: relative;
   min-height: 100vh;
+  z-index: 1;
 }
 
 main {
